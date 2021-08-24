@@ -14,7 +14,6 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## Implementation
@@ -27,10 +26,6 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-
-### TODO / Additional ideas
-
-- Add registration/login function with authentication (eg. Passport.js or JSON Web Token)
 
 ## Acknowledgments
 
