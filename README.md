@@ -21,7 +21,7 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- React.js JS framework
+- React.js
 - Styled-components & SCSS
 - Flexbox
 - CSS Grid
