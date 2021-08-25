@@ -11,12 +11,12 @@ import ShortlyLogo from "../images/logo.svg"
 
 const Header = () => {
 	return (
-		<Router>
+	<Router>
 			<div>
 				<NavBar>
 					<ul>
 						<li id="logoLink">
-							<Link to="/"><img src={ShortlyLogo} alt="shortly_logo" /></Link>
+							<Link to="/"><img id="logoSVG" src={ShortlyLogo} alt="shortly_logo" /></Link>
 						</li>
 						<li>
 							<Link to="/features">Features</Link>
@@ -67,7 +67,7 @@ const Header = () => {
 const NavBar = styled.nav`
 
 	width: 100%;
-	height: 5rem;
+	height: 7rem;
 	padding: 2rem 2rem;
 	display: flex;
 	flex-direction: row;
@@ -79,7 +79,6 @@ const NavBar = styled.nav`
 	
 	& ul {
 		width: 30%;
-		height: 5rem;
   	display: flex;
 		flex: auto;
   	flex-direction: row;
@@ -94,6 +93,10 @@ const NavBar = styled.nav`
 
 			& #logoLink{
 				width: 10rem;
+
+				&:hover{
+					fill: hsl(180, 66%, 49%);
+				}
 			}
 		}
 
