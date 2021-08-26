@@ -16,7 +16,7 @@ const Hero = () => {
 
 const HeroSection = styled.section`
   width: 100%;
-  height: calc(100vh - 7rem);
+  height: calc(100vh - 10rem);
 	position: relative;
   padding-top: 5%;
   padding-left: 10%;
@@ -34,7 +34,7 @@ const Title = styled.h1`
 const Text = styled.p`
 	width: 40%;
   font-size: 22px;
-	color: hsl(0, 0%, 75%);
+	color: hsl(257, 7%, 63%);
 `;
 
 const Button = styled.button`
@@ -45,7 +45,7 @@ const Button = styled.button`
   color: white;
 	background-color: hsl(180, 66%, 49%);
 	border-radius: 20px;
-	width: 8rem;
+	width: 10rem;
 	margin-top: 2.5rem;
 
   &:hover{
@@ -56,7 +56,7 @@ const Button = styled.button`
 const HeroImg = styled.img`
   position: absolute;
   right: -7%;
-	top: 0;
+	top: 10%;
   width: 50%;
 	z-index: -1;
 `

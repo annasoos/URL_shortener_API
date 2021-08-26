@@ -32,8 +32,8 @@ const Header = () => {
 						<li>
 							<Link to="/login">Login</Link>
 						</li>
-						<li id="signupBtn">
-							<Link to="/signup">Sign Up</Link>
+						<li>
+							<Link id="signup" to="/signup">Sign Up</Link>
 						</li>
 					</ul>
 				</NavBar>
@@ -73,6 +73,8 @@ const NavBar = styled.nav`
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+
+	font-weight: 500;
 	text-align: center;
 	
 	& ul {
@@ -83,8 +85,7 @@ const NavBar = styled.nav`
 		justify-content: flex-end;
 		align-items: center;
 
-		color: hsl(0, 0%, 75%);
-		font-weight: 500;
+		color: hsl(257, 7%, 63%);
 
 		&:first-of-type{
 			justify-content: flex-start;
@@ -95,19 +96,27 @@ const NavBar = styled.nav`
 		}
 
 		& li{
-			width: 8rem;
-			line-height: 2.5rem;
+			padding: 0.45rem 1.5em;
 
-			&:hover{
-				color: black;
+			&:first-of-type{
+			padding-left: 0;
+			}
+
+			& a{
+			font-weight: 500;
+
+				&:hover{
+					color: black;
+				}
 			}
 		}
 	}
 
-		& #signupBtn {
+		& #signup {
 			color: white;
 			background-color: hsl(180, 66%, 49%);
 			border-radius: 20px;
+			padding: 0.45rem 1.5em;
 
 			&:hover{
 				background-color: hsla(180, 66%, 49%, 0.5);

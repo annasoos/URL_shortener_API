@@ -20,6 +20,7 @@ The designs were created to the following widths:
 
 ### Neutral
 
+- Light Gray: hsl(230, 25%, 95%)
 - Gray: hsl(0, 0%, 75%)
 - Grayish Violet: hsl(257, 7%, 63%)
 - Very Dark Blue: hsl(255, 11%, 22%)

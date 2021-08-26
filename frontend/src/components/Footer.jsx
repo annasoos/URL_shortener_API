@@ -11,23 +11,23 @@ const Footer = () => {
 		<FooterContainer>
 			<LogoLink href="#"><img src={ShortlyLogo} alt="shortly_logo" /></LogoLink>
 			<LinkContainer>
-				<label> Features </label>
-				<a href="#">Link Shortening</a>
-				<a href="#">Branded Links</a>
-				<a href="#">Analitycs</a>
+				<h3> Features </h3>
+				<li><a href="#">Link Shortening</a></li>
+				<li><a href="#">Branded Links</a></li>
+				<li><a href="#">Analitycs</a></li>
 			</LinkContainer>
 			<LinkContainer>
-				<label> Resources</label>
-				<a href="#">Blog</a>
-				<a href="#">Developers</a>
-				<a href="#">Support</a>
+				<h3> Resources</h3>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Developers</a></li>
+				<li><a href="#">Support</a></li>
 			</LinkContainer>
 			<LinkContainer>
-				<label> Company </label>
-				<a href="#">About</a>
-				<a href="#">Our Team</a>
-				<a href="#">Carreers</a>
-				<a href="#">Support</a>
+				<h3> Company </h3>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Our Team</a></li>
+				<li><a href="#">Carreers</a></li>
+				<li><a href="#">Support</a></li>
 			</LinkContainer>
 			<SocialContainer>
 				<SocialIcon src={Facebook} alt="facebook" />
@@ -62,22 +62,18 @@ const LogoLink = styled.a`
 	}
 `
 
-const LinkContainer = styled.div`
-	display: flex;
-  flex-direction: column;
-	justify-content: flex-start;
-	height: 100%;
+const LinkContainer = styled.ul`
 
-	& a {
+	& li {
 		color: white;
-		margin-bottom: auto;
+		font-weight: 300;
 
 		&:hover{
 		color: hsl(180, 66%, 49%);
 		}
 	};
 
-	& label {
+	& h3 {
 		color: white;
 		font-weight: 700;
 		padding-bottom: 1.3rem;
