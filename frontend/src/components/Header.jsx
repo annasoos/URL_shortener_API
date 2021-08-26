@@ -11,7 +11,7 @@ import ShortlyLogo from "../images/logo.svg"
 
 const Header = () => {
 	return (
-	<Router>
+		<Router>
 			<div>
 				<NavBar>
 					<ul>
@@ -68,7 +68,8 @@ const NavBar = styled.nav`
 
 	width: 100%;
 	height: 7rem;
-	padding: 2rem 2rem;
+	padding: 5rem 5rem;
+
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -93,10 +94,6 @@ const NavBar = styled.nav`
 
 			& #logoLink{
 				width: 10rem;
-
-				&:hover{
-					fill: hsl(180, 66%, 49%);
-				}
 			}
 		}
 
