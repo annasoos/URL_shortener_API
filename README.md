@@ -25,7 +25,10 @@ Users should be able to:
 - Styled-components & SCSS
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
+
+### TODO
+
+- Improve responsivitiy
 
 ## Acknowledgments
 

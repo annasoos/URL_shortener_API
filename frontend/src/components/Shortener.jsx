@@ -6,7 +6,7 @@ const Shortener = () => {
 	return (
 		<ShortenerContainer>
 			<ShortenerContent>
-				<Input type="url" name="url" id="url"  placeholder="Shorten a link here..." pattern="https://.*" required></Input>
+				<Input type="url" name="url" id="url" autoComplete="off" placeholder="Shorten a link here..." pattern="https://.*" required></Input>
 				<Button>Shorten it!</Button>
 			</ShortenerContent>
 		</ShortenerContainer>

@@ -28,6 +28,7 @@ const Title = styled.h1`
 	font-weight: 700;
   color: hsl(260, 8%, 14%);
 	text-align: center;
+	padding-bottom: 1rem;
 
 	position: relative;
 	left: 50%;

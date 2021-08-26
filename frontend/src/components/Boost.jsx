@@ -36,6 +36,7 @@ const BoostContent = styled.div`
 	& h1{
 		color: white;
 		font-size: 2rem;
+		text-align: center;
 		padding-bottom: 1rem;
 	}
 `

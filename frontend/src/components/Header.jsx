@@ -15,7 +15,7 @@ const Header = () => {
 				<NavBar>
 					<ul>
 						<li id="logoLink">
-							<Link to="/"><img id="logoSVG" src={ShortlyLogo} alt="shortly_logo" /></Link>
+							<img id="logoSVG" src={ShortlyLogo} alt="shortly_logo" />
 						</li>
 						<li>
 							<Link to="/features">Features</Link>
