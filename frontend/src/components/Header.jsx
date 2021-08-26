@@ -6,7 +6,6 @@ import {
 	Link
 } from "react-router-dom";
 import styled from "styled-components";
-import Hero from "./Hero";
 import ShortlyLogo from "../images/logo.svg"
 
 const Header = () => {
@@ -41,22 +40,22 @@ const Header = () => {
 
 				<Switch>
 					<Route path="/">
-						<Hero />
+						
 					</Route>
 					<Route path="/features">
-						<Hero />
+						
 					</Route>
 					<Route path="/pricing">
-						<Hero />
+						
 					</Route>
 					<Route path="/resources">
-						<Hero />
+						
 					</Route>
 					<Route path="/login">
-						<Hero />
+						
 					</Route>
 					<Route path="/signup">
-						<Hero />
+						
 					</Route>
 				</Switch>
 			</div>
@@ -68,15 +67,13 @@ const NavBar = styled.nav`
 
 	width: 100%;
 	height: 7rem;
-	padding: 5rem 5rem;
+	padding: 5rem 10%;
 
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	text-align: center;
-
-	border: 2px solid red;
 	
 	& ul {
 		width: 30%;

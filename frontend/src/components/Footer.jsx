@@ -9,7 +9,7 @@ import Pinterest from "../images/icon-pinterest.svg";
 const Footer = () => {
 	return (
 		<FooterContainer>
-			<a href="#"><img src={ShortlyLogo} alt="shortly_logo" /></a>
+			<LogoLink href="#"><img src={ShortlyLogo} alt="shortly_logo" /></LogoLink>
 			<LinkContainer>
 				<label> Features </label>
 				<a href="#">Link Shortening</a>
@@ -42,7 +42,7 @@ const Footer = () => {
 const FooterContainer = styled.section`
 	width: 100%;
   height: 40%;
-	padding: 4rem 5rem;
+	padding: 5rem 10%;
 
 	display: grid;
 	grid-template-columns: 30% 18% 18% 18% auto;
@@ -51,15 +51,15 @@ const FooterContainer = styled.section`
 	grid-row-gap: 0px;
 
   background-color: hsl(255, 11%, 22%);
+`
 
-		& a:first-of-type{
-			cursor: auto;
-			
-			& img:hover{
-    	filter: invert(56%) sepia(76%) saturate(400%) hue-rotate(131deg) brightness(101%) contrast(94%);
-			cursor: pointer
-			}
-		}
+const LogoLink = styled.a`
+	cursor: auto;
+	
+	& img:hover{
+	filter: invert(56%) sepia(76%) saturate(400%) hue-rotate(131deg) brightness(101%) contrast(94%);
+	cursor: pointer
+	}
 `
 
 const LinkContainer = styled.div`
