@@ -70,7 +70,7 @@ const Header = () => {
 						<Link to="/resources">Resources</Link>
 						<hr />
 						<Link to="/login">Login</Link>
-						<Link to="/signup">Sign Up</Link>
+						<Link to="/signup" id="mobileSignup">Sign Up</Link>
 					</HamburgerMenu>
 
 				</NavBar>
@@ -114,7 +114,7 @@ const NavBar = styled.nav`
 	font-weight: 500;
 	text-align: center;
 
-	@media screen and (max-width: 480px) {
+	@media screen and (max-width: 1090px) {
     height: 5rem;
 		padding: 3.5rem 10%;
   }
@@ -133,7 +133,7 @@ const NavBar = styled.nav`
 
 		color: hsl(257, 7%, 63%);
 
-		@media screen and (max-width: 480px) {
+		@media screen and (max-width: 1090px) {
     display: none;
   }
 
@@ -176,7 +176,7 @@ const Hamburger = styled.div`
 	display: none;
 	cursor: pointer;
 
-	@media screen and (max-width: 480px) {
+	@media screen and (max-width: 1090px) {
     display: block;
   }
 
@@ -220,7 +220,8 @@ const HamburgerMenu = styled.div`
 
 		& a {
     font-size: 1rem;
-		padding: 1rem 1rem;
+		padding: 0.4rem 0.2rem;
+		margin: 0.8rem 0.5rem;
     color: white;
 		cursor: pointer;
 
@@ -238,6 +239,16 @@ const HamburgerMenu = styled.div`
 			position: relative;
 			left: 50%;
 			transform: translateX(-50%)
+		}
+
+		& #mobileSignup {
+			color: white;
+			background-color: hsl(180, 66%, 49%);
+			border-radius: 20px;
+
+			&:active{
+				background-color: hsla(180, 66%, 49%, 0.5);
+			}
 		}
   }
 `;
