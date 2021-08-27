@@ -113,6 +113,7 @@ const NavBar = styled.nav`
 
 	font-weight: 500;
 	text-align: center;
+	transition: all 1s ease-in-out;
 
 	@media screen and (max-width: 1090px) {
     height: 5rem;
@@ -207,7 +208,7 @@ const HamburgerMenu = styled.div`
   display: none;
 
   &.active{
-		width: 330px;
+		width: 80%;
 		display: flex;
 		flex-direction: column;
 		background-color: hsl(257, 27%, 26%);
@@ -217,6 +218,12 @@ const HamburgerMenu = styled.div`
 		top: 6rem;
 
 		z-index: 1;
+		transition: all 1s ease-in-out;
+
+		@media only screen and (min-width: 768px) {
+		width: 40%;
+		right: 10%;
+		};
 
 		& a {
     font-size: 1rem;

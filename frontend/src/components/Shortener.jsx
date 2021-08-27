@@ -34,6 +34,11 @@ const ShortenerContent = styled.div`
 	flex-direction: row;
 	justify-content: space-evenly;
 	align-items: center;
+	transition: all 1s ease-in-out;
+
+	@media only screen and (max-width: 1090px) {
+		flex-direction: column;
+	};
 `
 
 const Input = styled.input`
@@ -48,9 +53,19 @@ const Input = styled.input`
 	background-color: white;
 	color: hsl(255, 11%, 22%);
 
+		@media only screen and (max-width: 1090px) {
+			text-align: center;
+			font-size: 0.9rem;
+		};
+
 	&::placeholder{
+		width: 100%;
 		color: hsl(0, 0%, 75%);
 		font-weight: 500;
+
+		@media only screen and (max-width: 1090px) {
+			text-align: center
+		};
 	}
 
 `
