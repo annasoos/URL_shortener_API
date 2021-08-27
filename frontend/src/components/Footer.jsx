@@ -7,6 +7,55 @@ import Twitter from "../images/icon-twitter.svg";
 import Pinterest from "../images/icon-pinterest.svg";
 
 const Footer = () => {
+
+	const items = [
+    {
+      name: "Features",
+      links: [
+        { linkName: "Link Shortening", link: "#" },
+        { linkName: "Branded Links", link: "#" },
+        { linkName: "Analytics", link: "#" },
+      ],
+    },
+    {
+      name: "Resources",
+      links: [
+        { linkName: "Blog", link: "#" },
+        { linkName: "Developers", link: "#" },
+        { linkName: "Support", link: "#" },
+      ],
+    },
+    {
+      name: "Company",
+      links: [
+        { linkName: "About", link: "#" },
+        { linkName: "Our Team", link: "#" },
+        { linkName: "Careers", link: "#" },
+        { linkName: "Contact", link: "#" },
+      ],
+    },
+  ];
+
+  const socialIcons = [
+    {
+      name: "Facebook",
+      icon: Facebook,
+    },
+    {
+      name: "Twitter",
+      icon: Twitter,
+    },
+    {
+      name: "Pinterest",
+      icon: Pinterest,
+    },
+    {
+      name: "Instagram",
+      icon: Instagram,
+    },
+  ];
+
+
 	return (
 		<FooterContainer>
 			<LogoLink href="#"><img src={ShortlyLogo} alt="shortly_logo" /></LogoLink>

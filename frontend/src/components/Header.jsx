@@ -9,6 +9,7 @@ import styled from "styled-components";
 import ShortlyLogo from "../images/logo.svg"
 
 const Header = () => {
+
 	return (
 		<Router>
 			<div>

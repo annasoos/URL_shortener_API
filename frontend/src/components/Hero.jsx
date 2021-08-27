@@ -6,7 +6,7 @@ const Hero = () => {
 	return (
 		<HeroSection>
 			<Title>More than just shorter links</Title>
-			<Text>Build your brand's recognition and and get detaild insights on how your links are performing.</Text>
+			<Text>Build your brand's recognition and get detailed insights on how your links are performing.</Text>
 			<Button>Get Started</Button>
 			<HeroImg src={Illustration} alt="illustration" />
 		</HeroSection>
