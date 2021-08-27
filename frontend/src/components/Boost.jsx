@@ -32,12 +32,17 @@ const BoostContent = styled.div`
 	position: relative;
 	left: 50%;
 	transform: translateX(-50%);
+	transition: all 1s ease-in-out;
 
 	& h1{
 		color: white;
 		font-size: 2rem;
 		text-align: center;
 		padding-bottom: 1rem;
+
+		@media only screen and (max-width: 820px) {
+			font-size: 1.5rem;
+		};
 	}
 `
 

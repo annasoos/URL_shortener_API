@@ -53,6 +53,8 @@ const Input = styled.input`
 	background-color: white;
 	color: hsl(255, 11%, 22%);
 
+	transition: all 1s ease-in-out;
+
 		@media only screen and (max-width: 1090px) {
 			text-align: center;
 			font-size: 0.9rem;

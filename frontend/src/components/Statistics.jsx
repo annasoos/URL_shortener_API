@@ -35,7 +35,7 @@ const Statistics = () => {
 
 			<CardContainer>
 				{cards.map((card, index) => (
-					<Card index={index} {...card} /> //pass an object with all the properties as separate prop
+					<Card key={index} {...card} /> //pass an object with all the properties as separate prop
 				))}
 			</CardContainer>
 

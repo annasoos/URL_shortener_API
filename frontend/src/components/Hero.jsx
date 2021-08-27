@@ -21,6 +21,10 @@ const HeroSection = styled.section`
 	position: relative;
   padding-top: 5%;
   padding-left: 10%;
+
+	@media only screen and (min-width: 500px) and (max-width: 1090px) {
+		height: 100%;
+	};
 `;
 
 const Title = styled.h1`
@@ -39,10 +43,11 @@ const Title = styled.h1`
 	@media only screen and (max-width: 1090px) {
 		font-size: 50px;
 		width: 100%;
-		padding: 10% 10% 0 0;
+		padding-right: 10%;
 		text-align: center;
 		margin-top: 65%;
 	};
+
 `;
 
 const Text = styled.p`
@@ -71,6 +76,8 @@ const Button = styled.button`
 	border-radius: 20px;
 	width: 10rem;
 	margin-top: 2.5rem;
+
+	transition: all 1s ease-in-out;
 
   &:hover{
 		background-color: hsla(180, 66%, 49%, 0.5);
