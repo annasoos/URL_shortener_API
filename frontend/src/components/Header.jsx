@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -10,14 +10,34 @@ import ShortlyLogo from "../images/logo.svg"
 
 const Header = () => {
 
+	const [mobileView, setMobileView] = useState(false);
+
+	const mobileMenu = () => setMobileView(!mobileView);
+
+	useEffect(() => {
+
+		const body = document.querySelector("body");
+		const hamMenu = document.querySelector("#hamMenu");
+		const hamIcon = document.querySelector("#hamburger")
+
+		if (mobileView === true) {
+			body.classList.add("stopScroll");
+			hamMenu.classList.add("active");
+			hamIcon.classList.add("open");
+		} else {
+			body.classList.remove("stopScroll");
+			hamMenu.classList.remove("active");
+			hamIcon.classList.remove("open");
+		}
+
+	}, [mobileView]);
+
 	return (
 		<Router>
 			<div>
 				<NavBar>
+					<img id="logoSVG" src={ShortlyLogo} alt="shortly_logo" />
 					<ul>
-						<li id="logoLink">
-							<img id="logoSVG" src={ShortlyLogo} alt="shortly_logo" />
-						</li>
 						<li>
 							<Link to="/features">Features</Link>
 						</li>
@@ -37,30 +57,46 @@ const Header = () => {
 							<Link id="signup" to="/signup">Sign Up</Link>
 						</li>
 					</ul>
+
+					<Hamburger id="hamburger" onClick={mobileMenu}>
+						<span className="bar"></span>
+						<span className="bar"></span>
+						<span className="bar"></span>
+					</Hamburger>
+
+					<HamburgerMenu id="hamMenu">
+						<Link to="/features">Features</Link>
+						<Link to="/prices">Pricing</Link>
+						<Link to="/resources">Resources</Link>
+						<hr />
+						<Link to="/login">Login</Link>
+						<Link to="/signup">Sign Up</Link>
+					</HamburgerMenu>
+
 				</NavBar>
 
 				<Switch>
 					<Route path="/">
-						
+
 					</Route>
 					<Route path="/features">
-						
+
 					</Route>
 					<Route path="/pricing">
-						
+
 					</Route>
 					<Route path="/resources">
-						
+
 					</Route>
 					<Route path="/login">
-						
+
 					</Route>
 					<Route path="/signup">
-						
+
 					</Route>
 				</Switch>
 			</div>
-		</Router>
+		</Router >
 	)
 }
 
@@ -77,6 +113,15 @@ const NavBar = styled.nav`
 
 	font-weight: 500;
 	text-align: center;
+
+	@media screen and (max-width: 480px) {
+    height: 5rem;
+		padding: 3.5rem 10%;
+  }
+
+	& img {
+		padding-right: 5rem;
+	}
 	
 	& ul {
 		width: 30%;
@@ -88,12 +133,12 @@ const NavBar = styled.nav`
 
 		color: hsl(257, 7%, 63%);
 
+		@media screen and (max-width: 480px) {
+    display: none;
+  }
+
 		&:first-of-type{
 			justify-content: flex-start;
-
-			& #logoLink{
-				width: 10rem;
-			}
 		}
 
 		& li{
@@ -126,5 +171,75 @@ const NavBar = styled.nav`
 	}
 
 `
+
+const Hamburger = styled.div`
+	display: none;
+	cursor: pointer;
+
+	@media screen and (max-width: 480px) {
+    display: block;
+  }
+
+	& span {
+		display: block;
+		width: 35px;
+		height: 5px;
+		margin: 6px auto;
+		transition: all 0.3s ease-in-out;
+		background-color: hsl(0, 0%, 75%);
+		border-radius: 2px;
+	}
+
+	&.open span:nth-child(1) {
+		transform: rotate(-45deg) translate(-9px, 6px);
+	}
+
+	&.open span:nth-child(2) {
+  	opacity: 0;
+	}
+
+	&.open span:nth-child(3) {
+  	transform: rotate(45deg) translate(-8px, -8px);
+	}
+`;
+
+const HamburgerMenu = styled.div`
+  display: none;
+
+  &.active{
+		width: 330px;
+		display: flex;
+		flex-direction: column;
+		background-color: hsl(257, 27%, 26%);
+		border-radius: 10px;
+
+		position: absolute;
+		top: 6rem;
+
+		z-index: 1;
+
+		& a {
+    font-size: 1rem;
+		padding: 1rem 1rem;
+    color: white;
+		cursor: pointer;
+
+			&:active{
+				color: hsl(180, 66%, 49%);
+			}
+  	}
+
+
+		& hr{
+			height: 1px;
+			width: 80%;
+			background-color: hsl(257, 7%, 63%);
+
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%)
+		}
+  }
+`;
 
 export default Header
