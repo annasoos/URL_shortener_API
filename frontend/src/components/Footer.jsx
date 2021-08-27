@@ -12,26 +12,26 @@ const Footer = () => {
     {
       name: "Features",
       links: [
-        { linkName: "Link Shortening", link: "#" },
-        { linkName: "Branded Links", link: "#" },
-        { linkName: "Analytics", link: "#" },
+        { linkName: "Link Shortening", path: "#" },
+        { linkName: "Branded Links", path: "#" },
+        { linkName: "Analytics", path: "#" },
       ],
     },
     {
       name: "Resources",
       links: [
-        { linkName: "Blog", link: "#" },
-        { linkName: "Developers", link: "#" },
-        { linkName: "Support", link: "#" },
+        { linkName: "Blog", path: "#" },
+        { linkName: "Developers", path: "#" },
+        { linkName: "Support", path: "#" },
       ],
     },
     {
       name: "Company",
       links: [
-        { linkName: "About", link: "#" },
-        { linkName: "Our Team", link: "#" },
-        { linkName: "Careers", link: "#" },
-        { linkName: "Contact", link: "#" },
+        { linkName: "About", path: "#" },
+        { linkName: "Our Team", path: "#" },
+        { linkName: "Careers", path: "#" },
+        { linkName: "Contact", path: "#" },
       ],
     },
   ];
@@ -58,32 +58,24 @@ const Footer = () => {
 
 	return (
 		<FooterContainer>
+
 			<LogoLink href="#"><img src={ShortlyLogo} alt="shortly_logo" /></LogoLink>
-			<LinkContainer>
-				<h3> Features </h3>
-				<li><a href="#">Link Shortening</a></li>
-				<li><a href="#">Branded Links</a></li>
-				<li><a href="#">Analitycs</a></li>
-			</LinkContainer>
-			<LinkContainer>
-				<h3> Resources</h3>
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">Developers</a></li>
-				<li><a href="#">Support</a></li>
-			</LinkContainer>
-			<LinkContainer>
-				<h3> Company </h3>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Our Team</a></li>
-				<li><a href="#">Carreers</a></li>
-				<li><a href="#">Support</a></li>
-			</LinkContainer>
+
+			{items.map((item, index) => 
+				<LinkContainer key={index}>
+					<h3> {item.name} </h3>
+					{item.links.map((link, index) => 
+					<li key={index}><a href={link.path}>{link.linkName}</a></li>
+					)}
+				</LinkContainer>
+			)}
+			
 			<SocialContainer>
-				<SocialIcon src={Facebook} alt="facebook" />
-				<SocialIcon src={Twitter} alt="twitter" />
-				<SocialIcon src={Pinterest} alt="pinterest" />
-				<SocialIcon src={Instagram} alt="instagram" />
+			{socialIcons.map((icon, index) => 
+				<SocialIcon src={icon.icon} alt={icon.name} />
+			)}
 			</SocialContainer>
+
 		</FooterContainer>
 	);
 };

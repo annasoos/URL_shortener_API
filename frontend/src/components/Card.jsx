@@ -13,7 +13,7 @@ const Card = ({ header, text, image, id }) => {
 
 const CardContent = styled.div`
 	width: 31%;
-	height: 31%;
+	height: 14rem;
 	background-color: white;
 	padding: 2rem 2rem;
 	z-index: 1;
@@ -21,12 +21,12 @@ const CardContent = styled.div`
 
 	&#second{
 		position: relative;
-		top: 2.2rem;
+		top: 2rem;
 	}
 
 	&#third{
 		position: relative;
-		top: 4.4rem;
+		top: 4rem;
 	}
 `
 
