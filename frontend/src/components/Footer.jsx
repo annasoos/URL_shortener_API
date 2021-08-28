@@ -82,12 +82,11 @@ const Footer = () => {
 
 const FooterContainer = styled.section`
 	width: 100%;
-  min-height: 40%;
 	height: auto;
 	padding: 5rem 10%;
 
 	display: grid;
-	grid-template-columns: 30% 18% 18% 18% auto;
+	grid-template-columns: repeat(5, 1fr);
 
   background-color: hsl(255, 11%, 22%);
 	transition: all 1s ease-in-out;
