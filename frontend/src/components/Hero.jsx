@@ -17,8 +17,9 @@ const HeroSection = styled.section`
 	position: relative;
   width: 100%;
 	height: auto;
+	min-height: 50%;
   padding: 0 10%;
-	border: 1px solid white;  /*need this line to got the right position for image -- TODO: reorganize and have relative position to image so it can be included in the auto height of the section */
+	border: 1px solid white;  /*need this line to got the right image position in mobile view -- TODO: reorganize and have relative position to image so it can be included in the auto height of the section */
 `;
 
 const Title = styled.h1`

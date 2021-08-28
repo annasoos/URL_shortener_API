@@ -204,7 +204,7 @@ const HamburgerMenu = styled.div`
 		top: 6rem;
 
 		z-index: 1;
-		animation: appear 500ms;
+		animation: appear 500ms ease-in-out;
 		transform-origin: top center;
 
 		@media only screen and (min-width: 768px) {
