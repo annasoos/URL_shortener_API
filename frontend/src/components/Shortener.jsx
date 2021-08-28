@@ -42,7 +42,7 @@ const ShortenerContent = styled.div`
 `
 
 const Input = styled.input`
-	font-size: 18px;
+	font-size: 1rem;
 	font-weight: 700;
 	height: 2.5rem;
 	text-indent: 1rem;
@@ -79,7 +79,7 @@ const Input = styled.input`
 `
 
 const Button = styled.button`
-	font-size: 18px;
+	font-size: 1rem;
 	font-weight: 700;
 	height: 2.5rem;
 	width: 10rem;

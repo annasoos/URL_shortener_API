@@ -13,7 +13,6 @@ const Hero = () => {
 	);
 };
 
-
 const HeroSection = styled.section`
   width: 100%;
 	height: 70%;

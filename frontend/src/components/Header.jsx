@@ -16,16 +16,13 @@ const Header = () => {
 
 	useEffect(() => {
 
-		const body = document.querySelector("body");
 		const hamMenu = document.querySelector("#hamMenu");
 		const hamIcon = document.querySelector("#hamburger")
 
 		if (mobileView === true) {
-			body.classList.add("stopScroll");
 			hamMenu.classList.add("active");
 			hamIcon.classList.add("open");
 		} else {
-			body.classList.remove("stopScroll");
 			hamMenu.classList.remove("active");
 			hamIcon.classList.remove("open");
 		}
@@ -113,7 +110,6 @@ const NavBar = styled.nav`
 	justify-content: space-between;
 	align-items: center;
 
-	font-weight: 500;
 	text-align: center;
 	transition: all 1s ease-in-out;
 
@@ -152,7 +148,6 @@ const NavBar = styled.nav`
 			}
 
 			& a{
-			font-weight: 500;
 
 				&:hover{
 					color: black;
@@ -228,7 +223,6 @@ const HamburgerMenu = styled.div`
 		};
 
 		& a {
-    font-size: 1rem;
 		padding: 0.4rem 0.2rem;
 		margin: 0.8rem 0.5rem;
     color: white;
