@@ -57,7 +57,13 @@ const Input = styled.input`
 
 		@media only screen and (max-width: 1090px) {
 			text-align: center;
-			font-size: 0.9rem;
+			font-size: 1rem;
+		};
+
+		@media only screen and (max-width: 600px) {
+			text-align: center;
+			font-size: 0.8rem;
+			text-indent: 0;
 		};
 
 	&::placeholder{
