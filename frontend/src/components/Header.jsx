@@ -5,29 +5,19 @@ import {
 	Route,
 	Link
 } from "react-router-dom";
-import styled from "styled-components";
-import ShortlyLogo from "../images/logo.svg"
+import styled, { keyframes } from "styled-components";
+import ShortlyLogo from "../images/logo.svg";
 
 const Header = () => {
 
-	const [mobileView, setMobileView] = useState(false);
+	const [hamMenu, setHamMenu] = useState("closed");
+	const [hamIcon, setHamIcon] = useState("");
 
-	const mobileMenu = () => setMobileView(!mobileView);
+	const mobileMenu = () => {
+		hamMenu === "open" ? setHamMenu("closed") : setHamMenu("open");
+		hamIcon === "open" ? setHamIcon("closed") : setHamIcon("open");
+	};
 
-	useEffect(() => {
-
-		const hamMenu = document.querySelector("#hamMenu");
-		const hamIcon = document.querySelector("#hamburger")
-
-		if (mobileView === true) {
-			hamMenu.classList.add("active");
-			hamIcon.classList.add("open");
-		} else {
-			hamMenu.classList.remove("active");
-			hamIcon.classList.remove("open");
-		}
-
-	}, [mobileView]);
 
 	return (
 		<Router>
@@ -55,19 +45,19 @@ const Header = () => {
 						</li>
 					</ul>
 
-					<Hamburger id="hamburger" onClick={mobileMenu}>
+					<Hamburger id={hamIcon} onClick={mobileMenu}>
 						<span className="bar"></span>
 						<span className="bar"></span>
 						<span className="bar"></span>
 					</Hamburger>
 
-					<HamburgerMenu id="hamMenu">
-						<Link to="/features">Features</Link>
-						<Link to="/prices">Pricing</Link>
-						<Link to="/resources">Resources</Link>
+					<HamburgerMenu id={hamMenu}>
+						<Link className="dropdown" to="/features">Features</Link>
+						<Link className="dropdown" to="/prices">Pricing</Link>
+						<Link className="dropdow" to="/resources">Resources</Link>
 						<hr />
-						<Link to="/login">Login</Link>
-						<Link to="/signup" id="mobileSignup">Sign Up</Link>
+						<Link className="dropdown" to="/login">Login</Link>
+						<Link className="dropdown" to="/signup" id="mobileSignup">Sign Up</Link>
 					</HamburgerMenu>
 
 				</NavBar>
@@ -156,18 +146,15 @@ const NavBar = styled.nav`
 		}
 	}
 
-		& #signup {
-			color: white;
-			background-color: hsl(180, 66%, 49%);
-			border-radius: 20px;
-			padding: 0.45rem 1.5em;
-
-			&:hover{
-				background-color: hsla(180, 66%, 49%, 0.5);
-			}
+	& #signup {
+		color: white;
+		background-color: hsl(180, 66%, 49%);
+		border-radius: 20px;
+		padding: 0.45rem 1.5em;
+		&:hover{
+			background-color: hsla(180, 66%, 49%, 0.5);
 		}
 	}
-
 `
 
 const Hamburger = styled.div`
@@ -188,23 +175,25 @@ const Hamburger = styled.div`
 		border-radius: 2px;
 	}
 
-	&.open span:nth-child(1) {
+	&#open span:nth-child(1) {
 		transform: rotate(-45deg) translate(-9px, 6px);
 	}
 
-	&.open span:nth-child(2) {
+	&#open span:nth-child(2) {
   	opacity: 0;
 	}
 
-	&.open span:nth-child(3) {
+	&#open span:nth-child(3) {
   	transform: rotate(45deg) translate(-8px, -8px);
 	}
 `;
 
 const HamburgerMenu = styled.div`
-  display: none;
+	display: none;
+	/* animation: hide 500ms;
+	transform-origin: top center; --> cant display the animation with display:none property */
 
-  &.active{
+  &#open{
 		width: 80%;
 		display: flex;
 		flex-direction: column;
@@ -215,7 +204,8 @@ const HamburgerMenu = styled.div`
 		top: 6rem;
 
 		z-index: 1;
-		transition: all 1s ease-in-out;
+		animation: appear 500ms;
+		transform-origin: top center;
 
 		@media only screen and (min-width: 768px) {
 		width: 40%;
@@ -232,7 +222,6 @@ const HamburgerMenu = styled.div`
 				color: hsl(180, 66%, 49%);
 			}
   	}
-
 
 		& hr{
 			height: 1px;
@@ -255,5 +244,6 @@ const HamburgerMenu = styled.div`
 		}
   }
 `;
+
 
 export default Header

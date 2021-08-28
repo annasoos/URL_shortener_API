@@ -14,10 +14,12 @@ const Hero = () => {
 };
 
 const HeroSection = styled.section`
+	position: relative;
   width: 100%;
 	height: auto;
   padding: 0 10%;
-	position: relative;
+	border: 1px solid red;
+	
 `;
 
 const Title = styled.h1`
@@ -92,25 +94,17 @@ const Button = styled.button`
 
 const HeroImg = styled.img`
   position: absolute;
+	width: auto;
+	max-width: 80%;
 	right: -7%;
 	top: 5%;
-  max-height: 80%;
 	z-index: -1;
 	transition: all 1s ease-in-out;
 
-	@media only screen and (max-width: 1200px) {
-		max-height: 60%;
-	};
-
 	@media only screen and (max-width: 1090px) {
-		top: 5%;
+		position: absolute;
 		left: 50%;
 		transform: translateX(-50%);
-  	max-width: 80%;
-	};
-
-	@media only screen and (max-width: 992px) {
-		max-height: 50%;
 	};
 
 `
