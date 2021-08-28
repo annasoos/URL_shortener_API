@@ -106,6 +106,8 @@ const NavBar = styled.nav`
 	height: 7rem;
 	padding: 5rem 10%;
 
+	position: relative;
+
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
