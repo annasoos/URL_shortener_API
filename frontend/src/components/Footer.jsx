@@ -95,6 +95,7 @@ const FooterContainer = styled.section`
 	@media only screen and (max-width: 1000px) {
 		height: auto;
 		grid-template-columns: 33% 33% 33%;
+		grid-column-gap: 5%;
 	};
 
 	@media only screen and (max-width: 600px) {
@@ -131,6 +132,10 @@ const LinkContainer = styled.ul`
 		color: white;
 		font-weight: 700;
 		padding-bottom: 1.3rem;
+	};
+
+	@media only screen and (max-width: 600px) {
+		text-align: center;
 	};
 `
 

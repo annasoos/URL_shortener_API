@@ -16,7 +16,7 @@ const Hero = () => {
 
 const HeroSection = styled.section`
   width: 100%;
-	height: 80%;
+	height: 70%;
 	max-height: 900px;
 	position: relative;
   padding-top: 5%;
@@ -46,6 +46,14 @@ const Title = styled.h1`
 		padding-right: 10%;
 		text-align: center;
 		margin-top: 65%;
+	};
+
+	@media only screen and (max-width: 425px) {
+		font-size: 45px;
+	};
+
+	@media only screen and (max-width: 300px) {
+		font-size: 35px;
 	};
 
 `;

@@ -13,7 +13,8 @@ const Card = ({ header, text, image, id }) => {
 
 const CardContent = styled.div`
 	width: 31%;
-	height: 14rem;
+	min-height: 14rem;
+	height: auto;
 	background-color: white;
 	padding: 2rem 2rem;
 	z-index: 1;
@@ -28,6 +29,10 @@ const CardContent = styled.div`
 		position: relative;
 		top: 4rem;
 	}
+
+	@media only screen and (max-width: 1100px) {
+		width: 80%;
+	};
 `
 
 const CardTitle = styled.h4`
@@ -35,6 +40,18 @@ const CardTitle = styled.h4`
 	font-size: 1.2rem;
 	position: relative;
 	top: -2rem;
+
+	@media only screen and (max-width: 1100px) {
+		text-align: center;
+	};
+
+	@media only screen and (max-width: 375px) {
+		font-size: 1rem;
+	};
+
+	@media only screen and (max-width: 300px) {
+		font-size: 0.8rem;
+	};
 `
 
 const CardText = styled.p`
@@ -42,6 +59,14 @@ const CardText = styled.p`
 	color: hsl(257, 7%, 63%);
 	position: relative;
 	top: -1rem;
+
+	@media only screen and (max-width: 1100px) {
+		text-align: center;
+	};
+
+	@media only screen and (max-width: 300px) {
+		font-size: 0.7rem;
+	};
 `
 
 const CardImg = styled.img`
@@ -51,6 +76,13 @@ const CardImg = styled.img`
 
 	position: relative;
 	top: -3.5rem;
+
+	@media only screen and (max-width: 1100px) {
+		position: relative;
+		top: -3.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+	};
 `
 
 export default Card;

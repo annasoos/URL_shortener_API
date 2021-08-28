@@ -39,7 +39,7 @@ const Statistics = () => {
 				))}
 			</CardContainer>
 
-			<BlueLine />
+			{/* <BlueLine /> */}
 
 		</StatSection>
 	);
@@ -48,15 +48,15 @@ const Statistics = () => {
 
 const StatSection = styled.section`
   width: 100%;
-  height: 110%;
+	height: auto;
 	position: relative;
-  padding-top: 10rem;
+  padding: 10rem 0;
 
 	background-color: hsl(230, 25%, 95%);
 `;
 
 const Title = styled.h1`
-	width: 35%;
+	width: 50%;
   font-size: 40px;
 	font-weight: 700;
   color: hsl(260, 8%, 14%);
@@ -66,10 +66,21 @@ const Title = styled.h1`
 	position: relative;
 	left: 50%;
 	transform: translateX(-50%);
+
+	@media only screen and (max-width: 1200px) {
+		width: 80%;
+		font-size: 40px;
+	};
+
+	@media only screen and (max-width: 1090px) {
+		width: 80%;
+		font-size: 30px;
+	};
+
 `;
 
 const Text = styled.p`
-	width: 35%;
+	width: 50%;
   font-size: 1rem;
 	color: hsl(257, 7%, 63%);
 	text-align: center;
@@ -77,6 +88,10 @@ const Text = styled.p`
 	position: relative;
 	left: 50%;
 	transform: translateX(-50%);
+
+	@media only screen and (max-width: 1200px) {
+		width: 80%;
+	};
 `;
 
 const CardContainer = styled.div`
@@ -90,8 +105,13 @@ const CardContainer = styled.div`
 	transform: translateX(-50%);
 
 	width: 70%;
+	height: auto;
 	margin-top: 5rem;
 	z-index: 1;
+
+	@media only screen and (max-width: 1100px) {
+		flex-direction: column;
+	};
 `
 
 const BlueLine = styled.div`
@@ -100,7 +120,7 @@ const BlueLine = styled.div`
 	background-color: hsl(180, 66%, 49%);
 
 	position: absolute;
-	bottom: 33%;
+	top: 65%;
 	left: 50%;
 	transform: translateX(-50%);
 `
