@@ -28,7 +28,9 @@ Users should be able to:
 
 ### TODO
 
-- Improve responsivitiy
+- Improve responsivity (with SCSS & media queries)
+- Add shortener function (using open API)
+- Add registration & login function (using MongoDB & JSON Web Token)
 
 ## Acknowledgments
 
