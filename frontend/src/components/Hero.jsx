@@ -15,15 +15,9 @@ const Hero = () => {
 
 const HeroSection = styled.section`
   width: 100%;
-	height: 70%;
-	max-height: 900px;
+	height: auto;
+  padding: 0 10%;
 	position: relative;
-  padding-top: 5%;
-  padding-left: 10%;
-
-	@media only screen and (min-width: 500px) and (max-width: 1090px) {
-		height: 100%;
-	};
 `;
 
 const Title = styled.h1`
@@ -42,9 +36,9 @@ const Title = styled.h1`
 	@media only screen and (max-width: 1090px) {
 		font-size: 50px;
 		width: 100%;
-		padding-right: 10%;
 		text-align: center;
 		margin-top: 65%;
+		padding-top: 5rem;
 	};
 
 	@media only screen and (max-width: 425px) {
@@ -67,7 +61,6 @@ const Text = styled.p`
 	@media only screen and (max-width: 1090px) {
 		font-size: 20px;
 		width: 100%;
-		padding-right: 10%;
 		text-align: center;
 	};
 
@@ -91,7 +84,7 @@ const Button = styled.button`
 	}
 
 	@media only screen and (max-width: 1090px) {
-		position: absolute;
+		position: relative;
 		left: 50%;
 		transform: translateX(-50%);
 	};
@@ -105,6 +98,9 @@ const HeroImg = styled.img`
 	z-index: -1;
 	transition: all 1s ease-in-out;
 
+	@media only screen and (max-width: 1200px) {
+		max-height: 60%;
+	};
 
 	@media only screen and (max-width: 1090px) {
 		top: 5%;
@@ -117,9 +113,6 @@ const HeroImg = styled.img`
 		max-height: 50%;
 	};
 
-	@media only screen and (max-width: 1200px) {
-		max-height: 60%;
-	};
 `
 
 export default Hero;
