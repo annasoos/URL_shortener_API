@@ -59,6 +59,8 @@ html, body, #root {
   font-family: "Poppins", sans-serif;
 	font-size: 18px;
 	font-weight: 500;
+	--toastify-font-family: "Poppins", sans-serif;
+	--toastify-toast-background:hsl(0, 87%, 67%);;
 }
 
 @keyframes appear {
