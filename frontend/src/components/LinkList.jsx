@@ -25,6 +25,7 @@ const LinkListContainer = styled.section`
 const ListItem = styled.div`
 	display: grid;
 	grid-template-columns: 5fr 1fr 1fr;
+	grid-template-rows: 1fr;
 	justify-content: start;
 	align-items: center;
 	gap: 2rem;
@@ -41,7 +42,22 @@ const ListItem = styled.div`
 
 	& .shortLink{
 		color: hsl(180, 66%, 49%);
+
+		@media only screen and (max-width: 1090px) {
+			border-top: 1px solid hsl(0, 0%, 75%);
+			padding-top: 1rem;
+		};
 	}
+
+	@media only screen and (max-width: 1090px) {
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-columns: 1fr;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+
+		margin: 1rem 0;
+	};
 `
 
 const Button = styled.button`

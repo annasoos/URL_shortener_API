@@ -30,7 +30,8 @@ Users should be able to:
 
 ### TODO
 
-- Display previous links (saved to local storage), add copy and delete functions
+- Add copy and delete functions to link-list items
+- Improve responsivity
 - Add registration & login function (using MongoDB & JSON Web Token)
 
 ## Acknowledgments
