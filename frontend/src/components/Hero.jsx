@@ -27,7 +27,7 @@ const Title = styled.h1`
   font-size: 80px;
 	font-weight: 700;
 	letter-spacing: -0.05em;
-  color: hsl(260, 8%, 14%);
+  color: hsl(255, 11%, 22%);
 	transition: all 1s ease-in-out;
 
 	
@@ -44,7 +44,7 @@ const Title = styled.h1`
 	};
 
 	@media only screen and (max-width: 425px) {
-		font-size: 45px;
+		font-size: 40px;
 	};
 
 	@media only screen and (max-width: 300px) {
@@ -57,6 +57,7 @@ const Text = styled.p`
 	width: 40%;
   font-size: 22px;
 	color: hsl(257, 7%, 63%);
+	padding: 2rem 0;
 	transition: all 1s ease-in-out;
 
 
@@ -72,12 +73,12 @@ const Button = styled.button`
 	font-size: 18px;
 	font-weight: 700;
 	height: 2.5rem;
+	width: 10rem;
+	margin-top: 1rem;
 
   color: white;
 	background-color: hsl(180, 66%, 49%);
 	border-radius: 20px;
-	width: 10rem;
-	margin-top: 2.5rem;
 
 	transition: all 1s ease-in-out;
 

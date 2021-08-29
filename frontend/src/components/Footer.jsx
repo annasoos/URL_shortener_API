@@ -59,7 +59,7 @@ const Footer = () => {
 	return (
 		<FooterContainer>
 
-			<LogoLink href="#"><img src={ShortlyLogo} alt="shortly_logo" /></LogoLink>
+			<LogoLink href="#" className="imageLink"><img src={ShortlyLogo} alt="shortly_logo" /></LogoLink>
 
 			{items.map((item, index) =>
 				<LinkContainer key={index}>
@@ -70,7 +70,7 @@ const Footer = () => {
 				</LinkContainer>
 			)}
 
-			<SocialContainer>
+			<SocialContainer className="imageLink">
 				{socialIcons.map((icon, index) =>
 					<SocialIcon src={icon.icon} alt={icon.name} key={index} />
 				)}
@@ -101,8 +101,13 @@ const FooterContainer = styled.section`
 		height: auto;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(5, 1fr);
-		place-items: center;
+		justify-items: center;
+		align-items: start;
 		padding: 0 10%;
+
+		& .imageLink {
+		align-self: center;
+		}
 	};
 `
 
@@ -141,7 +146,7 @@ const LinkContainer = styled.ul`
 const SocialContainer = styled.div`
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-around;
 	width: 100%;
 	transition: all 1s ease-in-out;
 
@@ -162,7 +167,6 @@ const SocialContainer = styled.div`
 
 const SocialIcon = styled.img`
 	height: 24px;
-	padding-right: 1.3rem;
 	cursor: pointer;
 
 	&:hover{

@@ -28,7 +28,7 @@ const BoostContent = styled.div`
 	align-items: center;
 
 	height: 100%;
-	width: 50%;
+	width: 80%;
 	position: relative;
 	left: 50%;
 	transform: translateX(-50%);

@@ -58,7 +58,7 @@ const Title = styled.h1`
 	width: 50%;
   font-size: 40px;
 	font-weight: 700;
-  color: hsl(260, 8%, 14%);
+  color: hsl(255, 11%, 22%);
 	text-align: center;
 	padding-bottom: 1rem;
 
@@ -79,7 +79,7 @@ const Title = styled.h1`
 `;
 
 const Text = styled.p`
-	width: 50%;
+	width: 40%;
   font-size: 1rem;
 	color: hsl(257, 7%, 63%);
 	text-align: center;
@@ -103,7 +103,7 @@ const CardContainer = styled.div`
 	left: 50%;
 	transform: translateX(-50%);
 
-	width: 70%;
+	width: 80%;
 	height: auto;
 	margin-top: 5rem;
 	z-index: 1;

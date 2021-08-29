@@ -14,8 +14,9 @@ const Shortener = () => {
 }
 
 const ShortenerContainer = styled.section`
-	width: 70%;
+	width: 80%;
 	height: 10rem;
+	padding: 0 2rem;
 	position: relative;
 	left: 50%;
 	top: 5rem;
@@ -26,6 +27,10 @@ const ShortenerContainer = styled.section`
 	border-radius: 10px;
 
 	z-index: 1;
+
+	@media only screen and (max-width: 1090px) {
+		padding: 0 1.5rem;
+	};
 `
 
 const ShortenerContent = styled.div`
@@ -48,8 +53,7 @@ const Input = styled.input`
 	text-indent: 1rem;
 
 	border-radius: 10px;
-	width: 70%;
-	margin: 0 1rem;
+	width: 80%;
 	background-color: white;
 	color: hsl(255, 11%, 22%);
 
@@ -58,6 +62,7 @@ const Input = styled.input`
 		@media only screen and (max-width: 1090px) {
 			text-align: center;
 			font-size: 1rem;
+			width: 100%;
 		};
 
 		@media only screen and (max-width: 600px) {
@@ -92,6 +97,10 @@ const Button = styled.button`
   &:hover{
 		background-color: hsla(180, 66%, 49%, 0.5);
 	}
+
+	@media only screen and (max-width: 1090px) {
+		width: 100%;
+	};
 `;
 
 export default Shortener
