@@ -22,14 +22,15 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - React.js
+- Axios
+- Bitly Open API
 - Styled-components & SCSS
 - Flexbox
 - CSS Grid
 
 ### TODO
 
-- Improve responsivity (with SCSS & media queries)
-- Add shortener function (using open API)
+- Display previous links (saved to local storage), add copy and delete functions
 - Add registration & login function (using MongoDB & JSON Web Token)
 
 ## Acknowledgments

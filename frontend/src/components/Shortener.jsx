@@ -9,7 +9,7 @@ const Shortener = () => {
 	const [linkList, setLinkList] = useState([]);
 
 	useEffect(() => {
-		sessionStorage.setItem("linkList", JSON.stringify(linkList));
+		localStorage.setItem("linkList", JSON.stringify(linkList));
 	}, [linkList]);
 
 	async function shortenLink(link) {
