@@ -10,8 +10,11 @@ const Shortener = () => {
 	const [linkList, setLinkList] = useState([]);
 
 	useEffect(() => {
-		localStorage.setItem("linkList", JSON.stringify(linkList));
-    setLinkList(JSON.parse(localStorage.getItem("linkList")));
+		if(!localStorage.getItem("linkList")){
+			localStorage.setItem("linkList", JSON.stringify(linkList))
+		} else {
+			setLinkList(JSON.parse(localStorage.getItem("linkList")));
+		};
   }, []);
 
 	useEffect(() => {
