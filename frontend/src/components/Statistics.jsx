@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import Card from "./Card";
+import Shortener from "./Shortener";
 import recognitionImage from "../images/icon-brand-recognition.svg";
 import customizableImage from "../images/icon-fully-customizable.svg";
 import recordsImage from "../images/icon-detailed-records.svg";
@@ -30,6 +31,8 @@ const Statistics = () => {
 
 	return (
 		<StatSection>
+			<Shortener />
+
 			<Title>Advanced Statistics</Title>
 			<Text>Track how your links are performing across the web with our advanced statistics dashboard.</Text>
 
@@ -49,7 +52,8 @@ const StatSection = styled.section`
   width: 100%;
 	height: auto;
 	position: relative;
-  padding: 10rem 0;
+  margin: 9rem 0;
+	padding: 10rem 0;
 
 	background-color: hsl(230, 25%, 95%);
 `;

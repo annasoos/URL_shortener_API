@@ -3,10 +3,16 @@ import styled from "styled-components";
 import shortenerBG from "../images/bg-shorten-desktop.svg";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
+import LinkList from './LinkList';
 
 const Shortener = () => {
 	const [longLink, setLongLink] = useState("");
 	const [linkList, setLinkList] = useState([]);
+
+	useEffect(() => {
+		localStorage.setItem("linkList", JSON.stringify(linkList));
+    setLinkList(JSON.parse(localStorage.getItem("linkList")));
+  }, []);
 
 	useEffect(() => {
 		localStorage.setItem("linkList", JSON.stringify(linkList));
@@ -22,27 +28,26 @@ const Shortener = () => {
 		try {
 			const response = await axios.post(`https://api-ssl.bitly.com/v4/shorten`, body, { headers: headers })
 			let res = await response;
-			return setLinkList((oldList) => [...oldList, {original: longLink, shortened: res.data.link}])
+			document.querySelector("#url").value = "";
+			return setLinkList((oldList) => [...oldList, {original: longLink, short: res.data.link}])
 		}
 		catch (e) {
 			toast.error('Oops..something went wrong. Please try again!', { position: toast.POSITION.BOTTOM_CENTER, theme: "colored" });
 		}
 	}
 
-	console.log(linkList)
-
 	return (
 		<>
 			<ShortenerContainer>
 				<ShortenerContent>
 					<Input type="url" name="url" id="url" autoComplete="off" placeholder="Shorten a link here..." pattern="https://.*" required onChange={(e) => setLongLink(e.target.value)}></Input>
-					<Button onClick={(e) => shortenLink(longLink)}> Shorten it! </Button>
+					<Button onClick={(e) => longLink !== "" && shortenLink(longLink) }> Shorten it! </Button>
 				</ShortenerContent>
 			</ShortenerContainer>
 
-			{/* {linkList.map((link, index) => (
-				<div>{link}</div>
-			))} */}
+			{linkList.map((link, index) => (
+				<LinkList data={link} index={index}/>
+			))}
 		</>
 	)
 }
@@ -51,9 +56,9 @@ const ShortenerContainer = styled.section`
 	width: 80%;
 	height: 10rem;
 	padding: 0 2rem;
-	position: relative;
+	position: absolute;
 	left: 50%;
-	top: 5rem;
+	top: -5rem;
 	transform: translateX(-50%);
 
 	background-image: url(${shortenerBG});
