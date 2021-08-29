@@ -189,11 +189,7 @@ const Hamburger = styled.div`
 `;
 
 const HamburgerMenu = styled.div`
-	display: none;
-	/* animation: hide 500ms;
-	transform-origin: top center; --> cant display the animation with display:none property */
-
-  &#open{
+		opacity: 0;
 		width: 80%;
 		display: flex;
 		flex-direction: column;
@@ -204,8 +200,15 @@ const HamburgerMenu = styled.div`
 		top: 6rem;
 
 		z-index: 1;
-		animation: appear 500ms ease-in-out;
+
+		animation: hide 500ms;
+		transition-duration: 500ms;
 		transform-origin: top center;
+
+		&#open{
+			opacity: 1;
+			animation: appear 500ms;
+		}
 
 		@media only screen and (min-width: 768px) {
 		width: 40%;
@@ -242,7 +245,6 @@ const HamburgerMenu = styled.div`
 				background-color: hsla(180, 66%, 49%, 0.5);
 			}
 		}
-  }
 `;
 
 

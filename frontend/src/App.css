@@ -70,12 +70,12 @@ html, body, #root {
 	}
 }
 
-/* @keyframes hide {
+@keyframes hide {
 	from {
 			 transform: scaleY(1);
 	 }
 	 to {
 			 transform: scaleY(0);
 	 }
- } */
+ }
 
