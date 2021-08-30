@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
+import Delete from "../images/delete_icon.svg";
 
 const LinkList = ({ data }) => {
 
-	const [isClicked, setIsClicked] = useState("copy")
-	const [text, setText] = useState("Copy")
+	const [isClicked, setIsClicked] = useState("copy");
+	const [text, setText] = useState("Copy");
+	const [deleteLink, setDeleteLink] = useState("");
 
-	const copy = (e) => {
+	const copyFunc = (e) => {
 		setText("Copied!");
 		setIsClicked("clicked");
 		navigator.clipboard.writeText(data.short);
@@ -20,9 +22,10 @@ const LinkList = ({ data }) => {
 	return (
 		<LinkListContainer>
 			<ListItem>
+				<button> <img id="deleteIcon" src={Delete} alt="deletelogo" /> </button>
 				<span>{data.original}</span>
 				<span className="shortLink">{data.short}</span>
-				<Button className={isClicked} onClick={copy}> {text} </Button>
+				<Button className={isClicked} onClick={copyFunc}> {text} </Button>
 			</ListItem>
 		</LinkListContainer>
 	)
@@ -38,7 +41,7 @@ const LinkListContainer = styled.section`
 
 const ListItem = styled.div`
 	display: grid;
-	grid-template-columns: 5fr 1fr 1fr;
+	grid-template-columns: 1% 5fr 1fr 1fr;
 	grid-template-rows: 1fr;
 	align-items: center;
 	gap: 2rem;
@@ -53,10 +56,14 @@ const ListItem = styled.div`
 	font-weight: 700;
 	border-radius: 10px;
 
+	transition: all 1s ease-in-out;
+
+
 	& .shortLink{
 		color: hsl(180, 66%, 49%);
 
 		@media only screen and (max-width: 1090px) {
+			grid-column: 1 / 3;
 			border-top: 1px solid hsl(0, 0%, 75%);
 			padding-top: 1rem;
 		};
@@ -64,21 +71,22 @@ const ListItem = styled.div`
 
 	@media only screen and (max-width: 1090px) {
 		grid-template-rows: 1fr 1fr 1fr;
-		grid-template-columns: 1fr;
+		grid-template-columns: 5% 1fr;
 		gap: 1rem;
 
 		margin: 1rem 0;
+		overflow-x: scroll;
 	};
 
 	@media only screen and (max-width: 500px) {
 		font-weight: 700;
 		font-size: 0.8rem;
+		grid-template-columns: 10% 1fr;
 	};
 
 	@media only screen and (max-width: 400px) {
 		font-weight: 700;
 		font-size: 0.7rem;
-		overflow-x: scroll;
 	};
 `
 
