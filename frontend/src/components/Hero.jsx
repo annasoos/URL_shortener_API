@@ -72,6 +72,9 @@ const Text = styled.p`
 const Button = styled.button`
 	font-size: 18px;
 	font-weight: 700;
+
+	position: relative;
+	left: 0;
 	height: 2.5rem;
 	width: 10rem;
 	margin-top: 1rem;
@@ -80,14 +83,13 @@ const Button = styled.button`
 	background-color: hsl(180, 66%, 49%);
 	border-radius: 20px;
 
-	transition: all 1s ease-in-out;
+	transition: left 1s ease-in-out;
 
   &:hover{
 		background-color: hsla(180, 66%, 49%, 0.5);
 	}
 
 	@media only screen and (max-width: 1090px) {
-		position: relative;
 		left: 50%;
 		transform: translateX(-50%);
 	};
