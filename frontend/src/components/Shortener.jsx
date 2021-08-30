@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import shortenerBG from "../images/bg-shorten-desktop.svg";
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import LinkList from './LinkList';
+require('dotenv').config()
 
 const Shortener = () => {
 	const [longLink, setLongLink] = useState("");
@@ -23,11 +24,14 @@ const Shortener = () => {
 
 	async function shortenLink(link) {
 
+		const token = process.env.REACT_APP_BITLY_TOKEN;
+
 		const body = { "long_url": longLink, "domain": "bit.ly" };
 		const headers = {
-			'Authorization': 'Bearer d089090cf1f3626904ca7c990d69b89b723a841b',
+			'Authorization': 'Bearer ' + token,
 			'Content-Type': 'application/json'
 		}
+
 		try {
 			const response = await axios.post(`https://api-ssl.bitly.com/v4/shorten`, body, { headers: headers })
 			let res = await response;
@@ -49,7 +53,7 @@ const Shortener = () => {
 			</ShortenerContainer>
 
 			{linkList.map((link, index) => (
-				<LinkList data={link} index={index}/>
+				<LinkList data={link} key={index}/>
 			))}
 		</>
 	)

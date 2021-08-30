@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import styled from "styled-components";
 
-const LinkList = ({data, index}) => {
+const LinkList = ({data}) => {
 
 	return (
 		<LinkListContainer>
-			<ListItem key={index}>
+			<ListItem>
 				<span>{data.original}</span>
 				<span className="shortLink">{data.short}</span>
 				<Button> Copy </Button>

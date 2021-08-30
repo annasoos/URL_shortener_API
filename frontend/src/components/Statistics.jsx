@@ -52,7 +52,7 @@ const StatSection = styled.section`
   width: 100%;
 	height: auto;
 	position: relative;
-  margin: 9rem 0;
+  margin: 9rem 0 0 0;
 	padding: 10rem 0;
 
 	background-color: hsl(230, 25%, 95%);
