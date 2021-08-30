@@ -36,6 +36,7 @@ const Shortener = () => {
 			const response = await axios.post(`https://api-ssl.bitly.com/v4/shorten`, body, { headers: headers })
 			let res = await response;
 			document.querySelector("#url").value = "";
+			setLongLink("");
 			return setLinkList((oldList) => [...oldList, {original: longLink, short: res.data.link}])
 		}
 		catch (e) {

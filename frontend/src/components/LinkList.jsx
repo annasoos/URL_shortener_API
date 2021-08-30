@@ -22,7 +22,7 @@ const LinkList = ({ data }) => {
 	return (
 		<LinkListContainer>
 			<ListItem>
-				<button> <img id="deleteIcon" src={Delete} alt="deletelogo" /> </button>
+				<button> <DeleteIcon src={Delete} alt="deletelogo" /> </button>
 				<span>{data.original}</span>
 				<span className="shortLink">{data.short}</span>
 				<Button className={isClicked} onClick={copyFunc}> {text} </Button>
@@ -90,6 +90,12 @@ const ListItem = styled.div`
 	};
 `
 
+const DeleteIcon = styled.img`
+	&:hover {
+	filter: invert(54%) sepia(89%) saturate(1421%) hue-rotate(321deg) brightness(99%) contrast(92%);
+	}
+`
+
 const Button = styled.button`
 	&.copy {
 		position: relative;
@@ -122,6 +128,6 @@ const Button = styled.button`
 	@media only screen and (max-width: 1090px) {
 			width: 100%;		
 		};
-`;
+`
 
 export default LinkList
