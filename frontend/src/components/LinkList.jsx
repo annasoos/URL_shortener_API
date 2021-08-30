@@ -1,14 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from "styled-components";
 
-const LinkList = ({data}) => {
+const LinkList = ({ data }) => {
+
+	const [isClicked, setIsClicked] = useState("copy")
+	const [text, setText] = useState("Copy")
+
+	const copy = (e) => {
+		setText("Copied!");
+		setIsClicked("clicked");
+		navigator.clipboard.writeText(data.short);
+		setTimeout(() => {
+			setText("Copy")
+			setIsClicked("copy")
+			e.target.blur();
+		}, 2000);
+	};
 
 	return (
 		<LinkListContainer>
 			<ListItem>
 				<span>{data.original}</span>
 				<span className="shortLink">{data.short}</span>
-				<Button> Copy </Button>
+				<Button className={isClicked} onClick={copy}> {text} </Button>
 			</ListItem>
 		</LinkListContainer>
 	)
@@ -26,7 +40,6 @@ const ListItem = styled.div`
 	display: grid;
 	grid-template-columns: 5fr 1fr 1fr;
 	grid-template-rows: 1fr;
-	justify-content: start;
 	align-items: center;
 	gap: 2rem;
 
@@ -52,31 +65,55 @@ const ListItem = styled.div`
 	@media only screen and (max-width: 1090px) {
 		grid-template-rows: 1fr 1fr 1fr;
 		grid-template-columns: 1fr;
-		justify-content: center;
-		align-items: center;
 		gap: 1rem;
 
 		margin: 1rem 0;
 	};
+
+	@media only screen and (max-width: 500px) {
+		font-weight: 700;
+		font-size: 0.8rem;
+	};
+
+	@media only screen and (max-width: 400px) {
+		font-weight: 700;
+		font-size: 0.7rem;
+		overflow-x: scroll;
+	};
 `
 
 const Button = styled.button`
-	font-size: 0.9rem;
-	font-weight: 700;
-	height: 2rem;
-	width: 8rem;
+	&.copy {
+		position: relative;
+		font-size: 0.9rem;
+		font-weight: 700;
+		height: 2rem;
+		width: 8rem;
 
-  color: white;
-	background-color: hsl(180, 66%, 49%);
-	border-radius: 10px;
+  	color: white;
+		background-color: hsl(180, 66%, 49%);
+		border-radius: 10px;
 
-  &:hover{
-		background-color: hsla(180, 66%, 49%, 0.5);
+		&:hover{
+			background-color: hsla(180, 66%, 49%, 0.5);					
+		};
 	}
 
-	@media only screen and (max-width: 1090px) {
-		width: 100%;
+	&.clicked {
+		font-size: 0.9rem;
+		font-weight: 700;
+		height: 2rem;
+		width: 8rem;
+
+  	color: white;
+		background-color: hsl(257, 27%, 26%);
+		border-radius: 10px;	
 	};
+
+	
+	@media only screen and (max-width: 1090px) {
+			width: 100%;		
+		};
 `;
 
 export default LinkList
