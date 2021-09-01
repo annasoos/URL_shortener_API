@@ -36,11 +36,11 @@ const Statistics = () => {
 			<Title>Advanced Statistics</Title>
 			<Text>Track how your links are performing across the web with our advanced statistics dashboard.</Text>
 
-			<BlueLine />
 			<CardContainer>
 				{cards.map((card, index) => (
 					<Card key={index} {...card} /> //pass an object with all the properties as separate prop
 				))}
+				<BlueLine />
 			</CardContainer>
 
 		</StatSection>
@@ -122,7 +122,6 @@ const BlueLine = styled.div`
 	height: 6px;
 	width: 70%;
 	background-color: hsl(180, 66%, 49%);
-	margin-top: 13rem;
 
 	position: absolute;
 	left: 50%;
@@ -130,7 +129,7 @@ const BlueLine = styled.div`
 
 	@media only screen and (max-width: 1100px) {
 		width: 6px;
-		height: 50%;
+		height: 70%;
 		margin-top: 5rem;
 	};
 `
