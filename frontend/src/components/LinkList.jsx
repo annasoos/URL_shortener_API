@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import Delete from "../images/delete_icon.svg";
 
@@ -6,7 +6,6 @@ const LinkList = ({ data, original, linkList, onDeleteEvent }) => {
 
 	const [isClicked, setIsClicked] = useState("copy");
 	const [text, setText] = useState("Copy");
-	const [deleteLink, setDeleteLink] = useState("");
 
 	const copyFunc = (e) => {
 		setText("Copied!");
