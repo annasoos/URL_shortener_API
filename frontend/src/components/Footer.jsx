@@ -106,7 +106,7 @@ const FooterContainer = styled.section`
 		padding: 0 10%;
 
 		& .imageLink {
-		align-self: center;
+			align-self: center;
 		}
 	};
 `
@@ -115,8 +115,8 @@ const LogoLink = styled.a`
 	cursor: auto;
 	
 	& img:hover{
-	filter: invert(56%) sepia(76%) saturate(400%) hue-rotate(131deg) brightness(101%) contrast(94%);
-	cursor: pointer
+		filter: invert(56%) sepia(76%) saturate(400%) hue-rotate(131deg) brightness(101%) contrast(94%);
+		cursor: pointer
 	}
 `
 
@@ -128,7 +128,7 @@ const LinkContainer = styled.ul`
 		padding-bottom: 1rem;
 
 		&:hover{
-		color: hsl(180, 66%, 49%);
+			color: hsl(180, 66%, 49%);
 		}
 	};
 

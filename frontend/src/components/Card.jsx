@@ -78,8 +78,6 @@ const CardImg = styled.img`
 	top: -3.5rem;
 
 	@media only screen and (max-width: 1100px) {
-		position: relative;
-		top: -3.5rem;
 		left: 50%;
 		transform: translateX(-50%);
 	};

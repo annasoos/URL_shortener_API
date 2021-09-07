@@ -11,7 +11,7 @@ import ShortlyLogo from "../images/logo.svg";
 const Header = () => {
 
 	const [hamMenu, setHamMenu] = useState("closed");
-	const [hamIcon, setHamIcon] = useState("");
+	const [hamIcon, setHamIcon] = useState("closed");
 
 	const mobileMenu = () => {
 		hamMenu === "open" ? setHamMenu("closed") : setHamMenu("open");
@@ -151,6 +151,7 @@ const NavBar = styled.nav`
 		background-color: hsl(180, 66%, 49%);
 		border-radius: 20px;
 		padding: 0.45rem 1.5em;
+
 		&:hover{
 			background-color: hsla(180, 66%, 49%, 0.5);
 		}
@@ -211,15 +212,15 @@ const HamburgerMenu = styled.div`
 		}
 
 		@media only screen and (min-width: 768px) {
-		width: 40%;
-		right: 10%;
+			width: 40%;
+			right: 10%;
 		};
 
 		& a {
-		padding: 0.4rem 0.2rem;
-		margin: 0.8rem 0.5rem;
-    color: white;
-		cursor: pointer;
+			padding: 0.4rem 0.2rem;
+			margin: 0.8rem 0.5rem;
+    	color: white;
+			cursor: pointer;
 
 			&:active{
 				color: hsl(180, 66%, 49%);

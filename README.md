@@ -24,7 +24,7 @@ Users should be able to:
 - React.js
 - Axios
 - Bitly Open API
-- Styled-components & SCSS
+- Styled-components
 - Flexbox
 - CSS Grid
 

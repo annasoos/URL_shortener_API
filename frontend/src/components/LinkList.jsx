@@ -25,7 +25,7 @@ const LinkList = ({ data, original, linkList, onDeleteEvent }) => {
 		const filtered = storedLinks.filter(link => link.original !== deletedLink);
 
 		onDeleteEvent(filtered)		
-	}
+	};
 
 	return (
 		<LinkListContainer>
@@ -100,7 +100,7 @@ const ListItem = styled.div`
 
 const DeleteIcon = styled.img`
 	&:hover {
-	filter: invert(54%) sepia(89%) saturate(1421%) hue-rotate(321deg) brightness(99%) contrast(92%);
+		filter: invert(54%) sepia(89%) saturate(1421%) hue-rotate(321deg) brightness(99%) contrast(92%);
 	}
 `
 
