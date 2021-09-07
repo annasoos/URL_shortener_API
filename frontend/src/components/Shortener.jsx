@@ -54,7 +54,7 @@ const Shortener = () => {
 			</ShortenerContainer>
 
 			{linkList.map((link, index) => (
-				<LinkList data={link} key={index}/>
+				<LinkList data={link} key={index} original={link.original} linkList={linkList} onDeleteEvent={setLinkList}/>
 			))}
 		</>
 	)

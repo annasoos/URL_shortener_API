@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import styled from "styled-components";
 import Delete from "../images/delete_icon.svg";
 
-const LinkList = ({ data }) => {
+const LinkList = ({ data, original, linkList, onDeleteEvent }) => {
 
 	const [isClicked, setIsClicked] = useState("copy");
 	const [text, setText] = useState("Copy");
@@ -19,10 +19,19 @@ const LinkList = ({ data }) => {
 		}, 2000);
 	};
 
+	const deleteFunc = (e) => {
+		const deletedLink = e.target.parentElement.id;
+		const storedLinks = linkList;
+		
+		const filtered = storedLinks.filter(link => link.original !== deletedLink);
+
+		onDeleteEvent(filtered)		
+	}
+
 	return (
 		<LinkListContainer>
 			<ListItem>
-				<button> <DeleteIcon src={Delete} alt="deletelogo" /> </button>
+				<button onClick={deleteFunc} id={original}> <DeleteIcon src={Delete} alt="deletelogo"/> </button>
 				<span>{data.original}</span>
 				<span className="shortLink">{data.short}</span>
 				<Button className={isClicked} onClick={copyFunc}> {text} </Button>
