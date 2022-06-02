@@ -245,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654173254381</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="restructure files for deploy, add serve package">
+      <created>1654173522358</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1654173522358</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +281,7 @@
     <MESSAGE value="specify node version" />
     <MESSAGE value="update dockerfile" />
     <MESSAGE value="update package.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="update package.json" />
+    <MESSAGE value="restructure files for deploy, add serve package" />
+    <option name="LAST_COMMIT_MESSAGE" value="restructure files for deploy, add serve package" />
   </component>
 </project>
